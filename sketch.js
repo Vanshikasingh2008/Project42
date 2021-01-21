@@ -1,34 +1,53 @@
-function draw() {
-  background(0);  
-
+function setup() {
+  createCanvas(800,400);
+  //createSprite(400, 200, 50, 50);
   angleMode(DEGREES);
 
-  secAngle = map(sec,0,60,0,360,12);
-  minAngle = map(min,0,60,0,360,12);
-  hrAngle  = map(hr,0,60,0,360,12);
+}
 
-  push();
-  translate(800/2,400/2);
-  rotate(secAngle);
-  strokeWeight(7);
+function draw() {
+  background(0);
+translate(400,200);
+rotate(-90);
+
+  hr = hour();
+  min = minute();
+  sec = second(); 
+
+  strokeWeight(10);
   stroke(0,0,255);
-  line(0,0,100,50);
-  pop();
+  noFill();
+  secAngle = map(sec,0,60,0,360);
+  arc(0, 0, 260,260,0,secAngle);
 
-  push();
-  strokeWeight(7);  
-  translate(800/2,400/2);
-  rotate(minAngle);
+  strokeWeight(10);  
   stroke(0,225,0);
-  line(0,0,100,100);
+  noFill();
+  minAngle = map(min,0,60,0,360);
+  arc(0,0,280,280,0,minAngle);
+
+  strokeWeight(10);
+  noFill();
+  stroke(225,0,0);
+  hrAngle  = map(hr%12,0,12,0,360);
+  arc(0,0,300,300,0,hrAngle);
+
+  push();
+  rotate(secAngle);
+  stroke(0,0,255);
+  line(0,0,50,0);
   pop();
 
   push();
-  translate(800/2,400/2);
+  rotate(minAngle);
+  stroke(0,255,0);
+  line(0,0,75,0);
+  pop();
+
+  push();
   rotate(hrAngle);
-  strokeWeight(7);
-  stroke(225,0,0);
-  line(0,0,100,150);
+  stroke(255,0,0);
+  line(0,0,100,0);
   pop();
 
   drawSprites();
