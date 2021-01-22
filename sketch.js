@@ -41,7 +41,7 @@ rotate(-90);
   push();
   rotate(minAngle);
   stroke(0,255,0);
-  line(0,0,75,0);
+  line(0,0,78,0);
   pop();
 
   push();
