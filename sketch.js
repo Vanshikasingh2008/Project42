@@ -47,7 +47,7 @@ rotate(-90);
   push();
   rotate(hrAngle);
   stroke(255,0,0);
-  line(0,0,50,0);
+  line(0,0,55,0);
   pop();
 
   drawSprites();
