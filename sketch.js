@@ -35,7 +35,7 @@ rotate(-90);
   push();
   rotate(secAngle);
   stroke(0,0,255);
-  line(0,0,50,0);
+  line(0,0,80,0);
   pop();
 
   push();
@@ -47,7 +47,7 @@ rotate(-90);
   push();
   rotate(hrAngle);
   stroke(255,0,0);
-  line(0,0,100,0);
+  line(0,0,50,0);
   pop();
 
   drawSprites();
